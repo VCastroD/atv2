@@ -1,0 +1,39 @@
+==============================================================================
+4. TESTE DE FAIRNESS - paridade demografica e igualdade de oportunidade
+==============================================================================
+bootstrap + permutacao, 5000 repeticoes, alfa=0.05
+diferencas no sentido (F - M): negativo = F prejudicado
+
+== modelo v1 | atributo sensivel: genero ==
+             F | n= 1964 | aprovados=48.17% | bons pagadores reais=52.19% | TPR=67.90%
+             M | n= 2036 | aprovados=54.67% | bons pagadores reais=52.01% | TPR=75.26%
+  taxa-base real  (F - M): +0.0018  IC95% [-0.0292, +0.0335]  -> comparaveis
+  paridade demog. (F - M): -0.0650  IC95% [-0.0958, -0.0335]  p=0.0002
+  razao de impacto (menor/maior): 0.8811 (passa na regra dos 4/5)
+  oportunidade    (F - M): -0.0736  IC95% [-0.1120, -0.0356]  p=0.0004
+  -> REPROVADO: paridade demografica e igualdade de oportunidade violada(s) de forma significativa
+
+== modelo v2 | atributo sensivel: genero ==
+             F | n= 1964 | aprovados=53.46% | bons pagadores reais=52.19% | TPR=75.32%
+             M | n= 2036 | aprovados=52.46% | bons pagadores reais=52.01% | TPR=74.88%
+  taxa-base real  (F - M): +0.0018  IC95% [-0.0292, +0.0335]  -> comparaveis
+  paridade demog. (F - M): +0.0101  IC95% [-0.0208, +0.0403]  p=0.5233
+  razao de impacto (menor/maior): 0.9812 (passa na regra dos 4/5)
+  oportunidade    (F - M): +0.0044  IC95% [-0.0329, +0.0411]  p=0.8342
+  -> APROVADO: nenhuma disparidade estatisticamente distinguivel de zero
+
+-- Controle negativo: atributo nao usado como proxy ------------------------
+  A regiao nao entra no modelo. Se a auditoria acusasse disparidade
+  aqui, ela estaria acusando ruido como se fosse vies.
+
+== modelo v1 | atributo sensivel: regiao ==
+  Centro-Oeste | n=  322 | aprovados=54.04% | bons pagadores reais=52.17% | TPR=77.38%
+      Nordeste | n= 1097 | aprovados=52.78% | bons pagadores reais=55.24% | TPR=72.11%
+         Norte | n=  357 | aprovados=50.42% | bons pagadores reais=50.70% | TPR=67.96%
+       Sudeste | n= 1662 | aprovados=50.18% | bons pagadores reais=51.08% | TPR=70.55%
+           Sul | n=  562 | aprovados=51.96% | bons pagadores reais=49.82% | TPR=72.86%
+  taxa-base real  (Norte - Sudeste): -0.0038  IC95% [-0.0608, +0.0552]  -> comparaveis
+  paridade demog. (Norte - Sudeste): +0.0024  IC95% [-0.0544, +0.0591]  p=0.9378
+  razao de impacto (menor/maior): 0.9286 (passa na regra dos 4/5)
+  oportunidade    (Norte - Sudeste): -0.0260  IC95% [-0.1003, +0.0477]  p=0.4833
+  -> APROVADO: nenhuma disparidade estatisticamente distinguivel de zero

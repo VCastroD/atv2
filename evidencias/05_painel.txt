@@ -1,0 +1,10 @@
+==============================================================================
+5. PAINEL FINAL
+==============================================================================
+  v1: acuracia=0.7107 | paridade=-0.0650 (p=0.0002) | razao de impacto=0.881 | REPROVADO
+  v2: acuracia=0.7320 | paridade=+0.0101 (p=0.5233) | razao de impacto=0.981 | APROVADO
+
+  v1 -> v2: diferenca significativa (B > A)
+  ganho de acuracia: +0.0212  IC95% [+0.0092, +0.0335]  p=7.97e-04
+
+  evidencias gravadas em C:\Users\Python\Downloads\ATV1\atv2\evidencias

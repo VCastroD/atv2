@@ -1,0 +1,21 @@
+==============================================================================
+1. VALIDACAO DE DADOS - arquivo de producao (dados/credito.csv)
+==============================================================================
+linhas: 4000   colunas: 13
+contrato: 13 colunas declaradas
+
+  id_cliente             texto    obrigatoria  unica
+  genero                 texto    obrigatoria  dominio ['F', 'M']
+  regiao                 texto    obrigatoria  dominio ['Centro-Oeste', 'Nordeste', 'Norte', 'Sudeste', 'Sul']
+  faixa_etaria           texto    obrigatoria  dominio ['18-25', '26-40', '41-60', '60+']
+  renda_mensal           decimal  obrigatoria  faixa [1000.0, 40000.0]
+  score_bureau           inteiro  obrigatoria  faixa [300, 1000]
+  tempo_emprego_meses    inteiro  obrigatoria  faixa [0, 480]
+  divida_ativa           inteiro  obrigatoria  faixa [0, 1]
+  y_real                 inteiro  obrigatoria  faixa [0, 1]
+  score_modelo_v1        decimal  obrigatoria  faixa [0.0, 1.0]
+  pred_v1                inteiro  obrigatoria  faixa [0, 1]
+  score_modelo_v2        decimal  obrigatoria  faixa [0.0, 1.0]
+  pred_v2                inteiro  obrigatoria  faixa [0, 1]
+
+VALIDACAO OK - nenhuma violacao de contrato

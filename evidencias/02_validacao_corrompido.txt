@@ -1,0 +1,26 @@
+==============================================================================
+2. VALIDACAO DE DADOS - arquivo com defeitos plantados (dados/credito_corrompido.csv)
+==============================================================================
+Controle positivo da validacao: se a suite passar aqui, a suite e que
+esta quebrada. Sao 12 defeitos, das 4 familias de regra.
+
+VALIDACAO FALHOU - 12 violacao(oes)
+  [schema] divida_ativa: coluna obrigatoria ausente
+  [schema] obs_internas: coluna nao declarada no contrato
+  [schema] score_bureau: valor nao conversivel para inteiro (ex.: 'indisponivel') (linha 12)
+  [completude] genero: valor obrigatorio ausente [3x] (linha 22, 23, 24)
+  [completude] renda_mensal: valor obrigatorio ausente (linha 32)
+  [faixa] genero: valor fora do dominio ['F', 'M'] (ex.: 'f') (linha 52)
+  [faixa] regiao: valor fora do dominio ['Centro-Oeste', 'Nordeste', 'Norte', 'Sudeste', 'Sul'] (ex.: 'Sudeste ') (linha 53)
+  [faixa] renda_mensal: valor fora de [1000.0, 40000.0] (ex.: '-1500.0') (linha 42)
+  [faixa] score_bureau: valor fora de [300, 1000] (ex.: '1500') (linha 43)
+  [faixa] score_modelo_v1: valor fora de [0.0, 1.0] (ex.: '1.7') (linha 44)
+  [faixa] pred_v1: valor fora de [0, 1] (ex.: '2') (linha 54)
+  [unicidade] id_cliente: valor repetido (ex.: 'C00060') (linha 62)
+
+  schema      : 3 violacao(oes)
+  completude  : 2 violacao(oes)
+  faixa       : 6 violacao(oes)
+  unicidade   : 1 violacao(oes)
+
+carregar() abortou o pipeline: DadosInvalidosError: 12 violacao(oes) de contrato
